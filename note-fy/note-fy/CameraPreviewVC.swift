@@ -10,14 +10,16 @@ import UIKit
 import AVFoundation
 
 class CameraPreviewVC: UIViewController {
-
+    
+    @IBOutlet weak var predictedLabel: UILabel!
+    let cameraPreviewVM = CameraPreviewVM()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCamera()
     }
     
-    
-    func configureCamera() {
+    private func configureCamera() {
         
         //Start capture session
         let captureSession = AVCaptureSession()
@@ -36,19 +38,39 @@ class CameraPreviewVC: UIViewController {
         
         // Add output of capture
         /* Here we set the sample buffer delegate to our viewcontroller whose callback
-            will be on a queue named - videoQueue */
+         will be on a queue named - videoQueue */
         let dataOutput = AVCaptureVideoDataOutput()
         dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
         captureSession.addOutput(dataOutput)
     }
-
+    
+    private func updateLabel(with prediction: NotePredictionManager.Prediction) {
+        switch prediction.note {
+        case .twoThousand, .fiveHundred:
+            if prediction.confidence > 0.95 {
+                predictedLabel.text = prediction.note.rawValue
+            } else {
+                predictedLabel.text = ""
+            }
+        case .other:
+            predictedLabel.text = ""
+        }
+    }
+    
 }
 
 extension CameraPreviewVC: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        
+        cameraPreviewVM.handleIncomingFrames(cvPixelBuffer: pixelBuffer, completionHandler: { (prediction) in
+            self.updateLabel(with: prediction)
+        })
         
     }
     
 }
+
+
 

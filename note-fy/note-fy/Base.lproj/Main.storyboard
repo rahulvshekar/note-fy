@@ -31,10 +31,26 @@
                     <view key="view" contentMode="scaleToFill" id="GQH-Co-S4B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfp-hZ-DJq">
+                                <rect key="frame" x="10" y="831.5" width="394" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vjg-DP-sZD" firstAttribute="trailing" secondItem="Tfp-hZ-DJq" secondAttribute="trailing" constant="10" id="1py-pi-Gvx"/>
+                            <constraint firstItem="vjg-DP-sZD" firstAttribute="bottom" secondItem="Tfp-hZ-DJq" secondAttribute="bottom" constant="10" id="687-KP-WvM"/>
+                            <constraint firstItem="Tfp-hZ-DJq" firstAttribute="leading" secondItem="vjg-DP-sZD" secondAttribute="leading" constant="10" id="pJe-ht-CJY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vjg-DP-sZD"/>
                     </view>
                     <navigationItem key="navigationItem" id="4ja-LH-xAT"/>
+                    <connections>
+                        <outlet property="predictedLabel" destination="Tfp-hZ-DJq" id="n47-xA-LpX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhX-e5-AGc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
