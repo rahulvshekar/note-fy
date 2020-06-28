@@ -6,7 +6,7 @@
 //  Copyright © 2020 Rahul V. Shekar. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreML
 import Vision
 
@@ -33,6 +33,31 @@ class NotePredictionManager {
         case fiveHundred = "five-hundred"
         case twoThousand = "two-thousand"
         case other = "other"
+        
+        var iconImage: UIImage? {
+            switch self {
+            case .twoThousand: return UIImage(named: "TwoThousand")
+            case .fiveHundred: return UIImage(named: "FiveHundred")
+            case .other: return nil
+            }
+        }
+        
+        var name: String {
+            switch self {
+            case .twoThousand: return "₹2,000"
+            case .fiveHundred: return "₹500"
+            case .other: return ""
+            }
+        }
+        
+        func utter() {
+            switch self {
+            case .twoThousand, .fiveHundred:
+                UtternaceManager.shared.utter(name)
+            case .other:
+                break
+            }
+        }
 
     }
 

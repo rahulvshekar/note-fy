@@ -12,6 +12,9 @@ import AVFoundation
 class CameraPreviewVC: UIViewController {
     
     @IBOutlet weak var predictedLabel: UILabel!
+    @IBOutlet weak var previewView: UIView!
+    @IBOutlet weak var iconIV: UIImageView!
+    
     let cameraPreviewVM = CameraPreviewVM()
     
     override func viewDidLoad() {
@@ -33,7 +36,8 @@ class CameraPreviewVC: UIViewController {
         
         // Add preview layer to our view to display the open camera screen
         let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        view.layer.addSublayer(previewLayer)
+        previewLayer.videoGravity = .resizeAspectFill
+        previewView.layer.addSublayer(previewLayer)
         previewLayer.frame = view.frame
         
         // Add output of capture
@@ -45,15 +49,21 @@ class CameraPreviewVC: UIViewController {
     }
     
     private func updateLabel(with prediction: NotePredictionManager.Prediction) {
+//        predictedLabel.text = prediction.note.name
+//        iconIV.image = prediction.note.iconImage
         switch prediction.note {
         case .twoThousand, .fiveHundred:
             if prediction.confidence > 0.95 {
-                predictedLabel.text = prediction.note.rawValue
+                predictedLabel.text = prediction.note.name
+                iconIV.image = prediction.note.iconImage
+                prediction.note.utter()
             } else {
                 predictedLabel.text = ""
+                iconIV.image = nil
             }
         case .other:
-            predictedLabel.text = ""
+            predictedLabel.text = prediction.note.name
+            iconIV.image = prediction.note.iconImage
         }
     }
     
