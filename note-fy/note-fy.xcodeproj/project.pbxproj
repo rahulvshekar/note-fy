@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE1AD67C24A8CE4B00D133C3 /* NoteClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BE1AD67B24A8CE4B00D133C3 /* NoteClassifier.mlmodel */; };
 		BE1AD67E24A8D19000D133C3 /* UtternaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1AD67D24A8D19000D133C3 /* UtternaceManager.swift */; };
+		BE2CE30F24ACA0420080090F /* NoteClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BE2CE30E24ACA0420080090F /* NoteClassifier.mlmodel */; };
 		BE8949E324A740680014155D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8949E224A740680014155D /* AppDelegate.swift */; };
 		BE8949E524A740680014155D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8949E424A740680014155D /* SceneDelegate.swift */; };
 		BE8949EA24A740680014155D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8949E824A740680014155D /* Main.storyboard */; };
@@ -20,8 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BE1AD67B24A8CE4B00D133C3 /* NoteClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = NoteClassifier.mlmodel; sourceTree = "<group>"; };
 		BE1AD67D24A8D19000D133C3 /* UtternaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtternaceManager.swift; sourceTree = "<group>"; };
+		BE2CE30E24ACA0420080090F /* NoteClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = NoteClassifier.mlmodel; sourceTree = "<group>"; };
 		BE8949DF24A740680014155D /* note-fy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "note-fy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8949E224A740680014155D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE8949E424A740680014155D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 				BE8949EB24A7406D0014155D /* Assets.xcassets */,
 				BE8949ED24A7406D0014155D /* LaunchScreen.storyboard */,
 				BE8949F024A7406D0014155D /* Info.plist */,
-				BE1AD67B24A8CE4B00D133C3 /* NoteClassifier.mlmodel */,
+				BE2CE30E24ACA0420080090F /* NoteClassifier.mlmodel */,
 			);
 			path = "note-fy";
 			sourceTree = "<group>";
@@ -167,11 +167,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE8993F024A7C6BD00AD3F99 /* CameraPreviewVM.swift in Sources */,
-				BE1AD67C24A8CE4B00D133C3 /* NoteClassifier.mlmodel in Sources */,
 				BE8949E324A740680014155D /* AppDelegate.swift in Sources */,
 				BE8993ED24A7C66100AD3F99 /* NotePredictionManager.swift in Sources */,
 				BE1AD67E24A8D19000D133C3 /* UtternaceManager.swift in Sources */,
 				BE8949E524A740680014155D /* SceneDelegate.swift in Sources */,
+				BE2CE30F24ACA0420080090F /* NoteClassifier.mlmodel in Sources */,
 				BE8949F724A7812B0014155D /* CameraPreviewVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
