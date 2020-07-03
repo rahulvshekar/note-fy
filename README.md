@@ -1,7 +1,7 @@
 # Note-fy
 A simple iOS app that detects various denominations of the indian currency.
 
-![Demo](/images/demo1.gif)
+![Header](/images/header.jpeg)
 
 ### MVVM architecture
 - Uses a Model-View-ViewModel architecture to implement its complete functionality.
@@ -41,7 +41,7 @@ A simple iOS app that detects various denominations of the indian currency.
 - There are only 3 classes currently: "500", "2000", and "Other".
 - It works well in natural light or a well, evenly lit room.
 
-### Drawbacks
+### Current Limitations
 - It does not work well in the dark.
 - It cannot yet properly work in situations that have a lot of glare on the note.
 - The contours being on of the main sources of identification for the model, and the notes having very similar contours, makes it hard for the model to distinguish the notes in sitution that cover more than half of the note.
@@ -49,4 +49,7 @@ A simple iOS app that detects various denominations of the indian currency.
 - These drawbacks can how ever be overcome by adding more pictures while training.
 - Pictures taken in darker rooms and under more glare from angles can improve the result.
 - The issue with contours can be solved by adding pictures with more zoomed in features of each note. This way the model can use other features of the notes to distingish them.
+
+## Demo
+![Demo](/images/demo1.gif)
 
