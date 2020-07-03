@@ -1,6 +1,8 @@
 # note-fy
 A simple iOS app that detects various denominations of the indian currency.
 
+![Demo](/images/demo1.gif)
+
 ### MVVM architecture
 - Uses a Model-View-ViewModel architecture to implement its complete functionality.
 - It was helpful to distribute the actions among these 3 groups to maintain a simpler and modular structure to the application.
