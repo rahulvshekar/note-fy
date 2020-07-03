@@ -1,4 +1,4 @@
-# note-fy
+# Note-fy
 A simple iOS app that detects various denominations of the indian currency.
 
 ![Demo](/images/demo1.gif)
