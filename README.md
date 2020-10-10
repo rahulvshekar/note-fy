@@ -8,7 +8,7 @@ A simple iOS app that detects various denominations of the indian currency.
 - It was helpful to distribute the actions among these 3 groups to maintain a simpler and modular structure to the application.
 
 ### `CameraPreviewVC`
-- A primary view cintroller `CameraPreviewVC` is responsible for configuring the camera and accessing its data. It uses the AV foundation kit for this purpose.
+- A primary view controller `CameraPreviewVC` is responsible for configuring the camera and accessing its data. It uses the AV foundation kit for this purpose.
 - It passes the captured output to a new class `class NotePredictionManager`
 - It is also responsible for calling the class `UtternaceManager`
 - Responsible for capturing the frames from `AVCaptureOutput` and converting it to type `CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)`
